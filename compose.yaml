@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  webapp:
+    image: lchenlangley/count
+    ports:
+      - 5000:5000
+    volumes:
+      - .:/code
+    environment:
+      - MYREDIS_HOST=redisserver
+      - FLASK_ENV=development
+    depends_on:
+      - redisserver
+  redisserver:
+    image: "redis:alpine"
