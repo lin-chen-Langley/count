@@ -3,7 +3,7 @@ services:
   webapp:
     image: lchenlangley/count
     ports:
-      - 5000:5000
+      - 8000:5000
     volumes:
       - .:/code
     environment:
